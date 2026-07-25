@@ -49,6 +49,12 @@ This project uses `gh-pages` to easily deploy the built static files to GitHub P
 To deploy to production:
 ```bash
 npm run deploy
+Day mode
+<img width="1717" height="961" alt="image" src="https://github.com/user-attachments/assets/4c215453-213a-4427-83ae-e900c65b8f14" />
+night mode
+<img width="1642" height="989" alt="image" src="https://github.com/user-attachments/assets/67b69955-d730-4299-919d-cfaeae06e13b" />
+
+
 ```
 This script will automatically run `npm run build` and then push the `dist/` output to the `gh-pages` branch.
 
