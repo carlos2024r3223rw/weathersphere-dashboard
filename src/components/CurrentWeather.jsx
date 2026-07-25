@@ -43,9 +43,11 @@ export default function CurrentWeather({ weather, location, unit, setUnit, isDay
         </div>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0', textAlign: 'center' }}>
         <h2 style={{ fontSize: '2.5rem', margin: 0 }}>{location.name}</h2>
-        <p style={{ fontSize: '1.25rem', opacity: 0.8 }}>{location.country}</p>
+        <p style={{ fontSize: '1.125rem', opacity: 0.8, marginTop: '0.25rem' }}>
+          {[location.admin1, location.country].filter(Boolean).join(', ')}
+        </p>
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginTop: '2rem' }}>
           <IconComponent size={80} strokeWidth={1.5} />

@@ -21,7 +21,7 @@ export default function SearchBar({ onSearch, onGeolocation, error }) {
           />
           <input 
             type="text" 
-            placeholder="Search city..." 
+            placeholder="Search city, region or country..." 
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             style={{ paddingLeft: '3rem' }}
