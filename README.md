@@ -2,11 +2,7 @@
 
 WeatherSphere is a modern, responsive, and dynamic weather dashboard built with React and Vite. It consumes real-time weather and air quality data from the Open-Meteo APIs and presents it in a beautiful glassmorphism interface that adapts to the time of day and current weather conditions.
 
-### Day Theme (Light)
-![WeatherSphere Day Mode](public/assets/day.png)
 
-### Night Theme (Dark)
-![WeatherSphere Night Mode](public/assets/night.png)
 
 ## Features
 
