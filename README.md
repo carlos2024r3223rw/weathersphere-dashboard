@@ -50,9 +50,11 @@ To deploy to production:
 ```bash
 npm run deploy
 Day mode
-<img width="1717" height="961" alt="image" src="https://github.com/user-attachments/assets/4c215453-213a-4427-83ae-e900c65b8f14" />
+<img width="1717" height="961" alt="Captura de pantalla 2026-07-25 000424" src="https://github.com/user-attachments/assets/9c257506-9331-4fc3-b29f-7757c179537e" />
+
 night mode
-<img width="1642" height="989" alt="image" src="https://github.com/user-attachments/assets/67b69955-d730-4299-919d-cfaeae06e13b" />
+<img width="1642" height="989" alt="Captura de pantalla 2026-07-25 000451" src="https://github.com/user-attachments/assets/fda9e818-7bb6-4f91-a237-01592288a73e" />
+
 
 
 ```
