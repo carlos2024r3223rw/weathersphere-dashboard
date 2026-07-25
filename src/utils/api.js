@@ -6,7 +6,7 @@ const GEOCODE_API_URL = 'https://geocoding-api.open-meteo.com/v1/search';
  * Searches for a city and returns its coordinates and details.
  */
 export async function searchCity(query) {
-  const response = await fetch(`${GEOCODE_API_URL}?name=${encodeURIComponent(query)}&count=5&language=en&format=json`);
+  const response = await fetch(`${GEOCODE_API_URL}?name=${encodeURIComponent(query)}&count=5&language=es&format=json`);
   if (!response.ok) throw new Error('Failed to fetch city data');
   const data = await response.json();
   
