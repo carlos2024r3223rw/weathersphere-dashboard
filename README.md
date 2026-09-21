@@ -1,64 +1,83 @@
-# WeatherSphere Dashboard
+﻿# 🌤️ WeatherSphere Dashboard — Panel Meteorológico en Tiempo Real
 
-WeatherSphere is a modern, responsive, and dynamic weather dashboard built with React and Vite. It consumes real-time weather and air quality data from the Open-Meteo APIs and presents it in a beautiful glassmorphism interface that adapts to the time of day and current weather conditions.
+> Dashboard interactivo para monitoreo del clima con geolocalización automática. Consume APIs externas en tiempo real para mostrar condiciones actuales y pronósticos con una interfaz limpia y responsiva.
 
+[![Demo en vivo](https://img.shields.io/badge/Demo-Live-brightgreen?style=for-the-badge)](https://carlos2024r3223rw.github.io/weathersphere-dashboard/)
+[![Stack](https://img.shields.io/badge/Stack-JavaScript%20%7C%20REST%20APIs-yellow?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/es/docs/Web/JavaScript)
 
+---
 
-## Features
+## 🔴 El Problema
 
-- **Real-time Metrics**: Current temperature (with °C / °F toggle), apparent temperature, humidity, wind speed, and UV index.
-- **Air Quality Index (AQI)**: Dynamic color-coded AQI metric showing European AQI and PM levels.
-- **24-hour Forecast**: Interactive and fluid line chart using Chart.js to visualize the temperature trend for the next 24 hours.
-- **5-Day Extended Forecast**: A horizontally scrollable list containing the prognosis for the upcoming 5 days.
-- **Geolocation & Search**: Uses browser geolocation or an advanced geocoding search to find any city or country in the world.
-- **Dynamic Theming**: The background and UI colors adapt depending on whether it's daytime, nighttime, or raining at the requested location.
-- **Persistence**: Automatically caches your last searched location in your browser's local storage so you don't lose it upon refresh.
+Se necesitaba demostrar integración profesional de APIs externas con una UI intuitiva, sin depender de librerías pesadas que inflen el bundle:
 
-## Tech Stack
+- ❌ La mayoría de dashboards similares usan React/Vue solo para leer una API
+- ❌ Bundle sizes innecesariamente grandes para funcionalidad simple
+- ❌ Interfaces genéricas sin atención al detalle en UX
 
-- **Framework**: React.js (Bootstrapped with Vite)
-- **Styling**: Vanilla CSS (CSS variables, Grid, Flexbox, Custom Glassmorphism UI)
-- **Icons**: Lucide React
-- **Charts**: Chart.js (`react-chartjs-2`)
-- **APIs**: [Open-Meteo](https://open-meteo.com/) (Weather API, Air Quality API, Geocoding API)
+## ✅ La Solución
 
-## Installation & Local Development
+Dashboard vanilla de alto rendimiento que integra múltiples fuentes de datos:
 
-1. Clone the repository and navigate to the project directory:
-   ```bash
-   git clone https://github.com/carlos2024r3223rw/weathersphere-dashboard.git
-   cd weathersphere-dashboard
-   ```
+- 📍 **Geolocalización automática** — detecta tu ubicación al cargar
+- 🔍 **Búsqueda por ciudad** — cualquier ubicación del mundo
+- 🌡️ **Datos en tiempo real** — temperatura, humedad, viento, UV index
+- 📅 **Pronóstico extendido** — condiciones para los próximos días
+- ⚡ **< 50KB total** — sin dependencias pesadas
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## 🧠 Reto Técnico Resuelto
 
-3. Start the Vite development server:
-   ```bash
-   npm run dev
-   ```
+El reto principal fue manejar las **llamadas asíncronas a múltiples endpoints** (geolocalización del browser + API de clima + API de pronóstico) de forma eficiente. Se usó `Promise.allSettled()` para hacer las llamadas en paralelo sin que el fallo de una endpoint bloquee el resto, con estados de carga y error granulares por sección del dashboard.
 
-4. Open your browser and visit `http://localhost:5173`.
+---
 
-## Deployment
+## 🛠️ Stack Tecnológico
 
-This project uses `gh-pages` to easily deploy the built static files to GitHub Pages.
+| Área | Tecnología |
+|---|---|
+| Lenguaje | JavaScript ES2022+ (Async/Await, Promise.allSettled) |
+| APIs | Open-Meteo, Nominatim Geocoding API |
+| Geolocalización | Browser Geolocation API |
+| Layout | CSS Grid + Flexbox |
+| Deploy | GitHub Pages |
 
-To deploy to production:
+---
+
+## 🚀 Instalación Local
+
 ```bash
-npm run deploy
+git clone https://github.com/carlos2024r3223rw/weathersphere-dashboard.git
+cd weathersphere-dashboard
+# Abrir directamente — no requiere build
+start index.html
 ```
 
-### Screenshots
+> Las APIs usadas (Open-Meteo y Nominatim) son gratuitas y no requieren API key.
 
-**Day Mode**
-<img width="1717" height="961" alt="Captura de pantalla 2026-07-25 000424" src="https://github.com/user-attachments/assets/9c257506-9331-4fc3-b29f-7757c179537e" />
+---
 
-**Night Mode**
-<img width="1642" height="989" alt="Captura de pantalla 2026-07-25 000451" src="https://github.com/user-attachments/assets/fda9e818-7bb6-4f91-a237-01592288a73e" />
-This script will automatically run `npm run build` and then push the `dist/` output to the `gh-pages` branch.
+## 📁 Estructura del Proyecto
 
-## Acknowledgements
-Designed and built to showcase fluid, dynamic UX with robust API integration. Data provided by Open-Meteo.
+```
+weathersphere-dashboard/
+├── index.html             # Estructura y layout principal
+├── css/
+│   └── styles.css         # Diseño responsive y temas
+├── js/
+│   ├── api.js             # Capa de integración con APIs externas
+│   ├── geolocation.js     # Manejo de Geolocation API
+│   ├── render.js          # Funciones de renderizado del DOM
+│   └── main.js            # Orquestación principal
+└── assets/
+    └── icons/             # Iconos meteorológicos SVG
+```
+
+---
+
+## 👤 Autor
+
+**Carlos Manuel Martínez Lima** — Full Stack Developer · Especialista SaaS & eCommerce
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-webcarlos--jet.vercel.app-blue?style=flat-square)](https://webcarlos-jet.vercel.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/carlos-manuel-martinez-lima-ba238a1a9/)
+[![Email](https://img.shields.io/badge/Email-cm7887575%40gmail.com-red?style=flat-square&logo=gmail)](mailto:cm7887575@gmail.com)
